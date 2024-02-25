@@ -1,4 +1,6 @@
-﻿namespace HW4_L4;
+﻿using System.Diagnostics.Metrics;
+
+namespace HW4_L4;
 
 public class Counter
 {
@@ -27,5 +29,15 @@ public class Counter
     {
         if (Current > Min)
             Current--;
+    }
+
+    public void Show()
+    {
+        Console.WriteLine($"Min: {this.Min}, Cur: {this.Current}, Max: {this.Max}");
+    }
+
+    public override string ToString()
+    {
+        return ($"(M: {Min} ; C: {Current} ; M: {Max})");
     }
 }

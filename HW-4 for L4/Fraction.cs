@@ -2,8 +2,23 @@
 
 public class Fraction
 {
+    private int _denom;
     public int Numerator { get; set; }
-    public int Denominator { get; set; }
+    public int Denominator
+    {
+        get { return _denom; }
+        set
+        {
+            if (value != 0)
+            {
+                _denom = value;
+            }
+            else
+            {
+                throw new Exception("Mexrec 0 ola Bilmez !");
+            }
+        }
+    }
 
     public Fraction(int n, int d)
     {
@@ -65,5 +80,15 @@ public class Fraction
 
         Numerator=(Numerator/gcd);
         Denominator=(Denominator/gcd);
+    }
+
+    public void Show()
+    {
+        Console.WriteLine($"( {Numerator} / {Denominator} )");
+    }
+
+    public override string ToString()
+    {
+        return ($"{Numerator} / {Denominator}");
     }
 }
